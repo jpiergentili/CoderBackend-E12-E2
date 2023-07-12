@@ -6,5 +6,10 @@ export default class UserRouter extends MyRouter {
             /* res.send('Hola Coders!') */
             res.sendSuccess('Hola coders!')
         })
+
+        this.post('/:word', (req, res) => {
+            if(req.params.word == "x") res.sendUserError('error')
+            else res.sendSuccess('Word added!')
+        })
     }
 }
